@@ -1,0 +1,15 @@
+# robots.txt for Caraway - Cash for Cars Brisbane
+# https://www.caraway.com.au/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas if they exist
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.caraway.com.au/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
+
