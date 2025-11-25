@@ -500,6 +500,18 @@ document.querySelectorAll('form').forEach(form => {
 
 // Cash for Cars Calculator Functionality
 let currentStep = 1;
+const calcErrorMessage = document.getElementById('calc-error');
+
+function setCalcError(message = '') {
+    if (!calcErrorMessage) return;
+    if (message) {
+        calcErrorMessage.textContent = message;
+        calcErrorMessage.style.display = 'block';
+    } else {
+        calcErrorMessage.textContent = '';
+        calcErrorMessage.style.display = 'none';
+    }
+}
 
 function nextStep() {
     const make = document.getElementById('calc-make').value;
@@ -508,9 +520,11 @@ function nextStep() {
     const condition = document.getElementById('calc-condition').value;
     
     if (!make || !model || !year || !condition) {
-        alert('Please fill in all required fields');
+        setCalcError('Please complete every field so we can calculate a localised estimate.');
         return;
     }
+    
+    setCalcError('');
     
     // Calculate estimate
     const estimate = calculateEstimate(make, year, condition);
@@ -531,6 +545,7 @@ function prevStep() {
     document.getElementById('step1').classList.remove('hidden');
     document.getElementById('step2').classList.add('hidden');
     currentStep = 1;
+    setCalcError('');
     
     // Clear form
     document.getElementById('calc-make').value = '';

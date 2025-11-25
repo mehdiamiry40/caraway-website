@@ -782,6 +782,7 @@
                                     </select>
                                 </div>
                             </div>
+                                            <p id="calc-error" class="calc-error" role="alert" aria-live="assertive"></p>
                             <button type="button" class="btn btn-primary" onclick="nextStep()">Get
                                 My Quote</button>
                         </div>
@@ -1124,68 +1125,52 @@
         </section>
 
         <!-- Success Stories Section -->
-        <section id="success-stories" class="success-stories" style="background-color: var(--bg-white);">
+        <section id="success-stories" class="success-stories">
             <div class="container">
                 <h2 class="section-title">Recent Success Stories</h2>
                 <p class="section-subtitle">See how much cash these Brisbane locals got for their cars</p>
 
-                <div class="stories-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="stories-grid">
                     <!-- Story 1 -->
                     <div class="story-card card">
-                        <div class="story-header"
-                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span class="story-location"
-                                style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;">Chermside</span>
-                            <span class="story-date" style="color: var(--text-light); font-size: 0.875rem;">2 days
-                                ago</span>
+                        <div class="story-header">
+                            <span class="story-location">Chermside</span>
+                            <span class="story-date">2 days ago</span>
                         </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">2015 Toyota Camry</h3>
-                        <div class="story-price"
-                            style="font-size: 2rem; font-weight: 800; color: var(--success); margin-bottom: 1rem;">
-                            $8,500 <span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">Cash
-                                Paid</span></div>
-                        <p style="color: var(--text-light);">"Caraway gave me the best price in Brisbane. They came
+                        <h3>2015 Toyota Camry</h3>
+                        <div class="story-price">
+                            $8,500 <span>Cash Paid</span></div>
+                        <p>"Caraway gave me the best price in Brisbane. They came
                             within 2 hours and paid cash on the spot. Highly recommended!"</p>
-                        <div class="story-author" style="margin-top: 1rem; font-weight: 600;">- Sarah M.</div>
+                        <div class="story-author">- Sarah M.</div>
                     </div>
 
                     <!-- Story 2 -->
                     <div class="story-card card">
-                        <div class="story-header"
-                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span class="story-location"
-                                style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;">Sunnybank</span>
-                            <span class="story-date" style="color: var(--text-light); font-size: 0.875rem;">Last
-                                week</span>
+                        <div class="story-header">
+                            <span class="story-location">Sunnybank</span>
+                            <span class="story-date">Last week</span>
                         </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">2010 Mazda 3 (Damaged)</h3>
-                        <div class="story-price"
-                            style="font-size: 2rem; font-weight: 800; color: var(--success); margin-bottom: 1rem;">
-                            $3,200 <span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">Cash
-                                Paid</span></div>
-                        <p style="color: var(--text-light);">"Even with the accident damage, they offered a fair price.
+                        <h3>2010 Mazda 3 (Damaged)</h3>
+                        <div class="story-price">
+                            $3,200 <span>Cash Paid</span></div>
+                        <p>"Even with the accident damage, they offered a fair price.
                             The tow truck driver was professional and helpful."</p>
-                        <div class="story-author" style="margin-top: 1rem; font-weight: 600;">- David L.</div>
+                        <div class="story-author">- David L.</div>
                     </div>
 
                     <!-- Story 3 -->
                     <div class="story-card card">
-                        <div class="story-header"
-                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <span class="story-location"
-                                style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;">Toowong</span>
-                            <span class="story-date"
-                                style="color: var(--text-light); font-size: 0.875rem;">Yesterday</span>
+                        <div class="story-header">
+                            <span class="story-location">Toowong</span>
+                            <span class="story-date">Yesterday</span>
                         </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">2018 Ford Ranger</h3>
-                        <div class="story-price"
-                            style="font-size: 2rem; font-weight: 800; color: var(--success); margin-bottom: 1rem;">
-                            $14,500 <span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">Cash
-                                Paid</span></div>
-                        <p style="color: var(--text-light);">"Quick and easy process. I needed to sell my ute fast and
+                        <h3>2018 Ford Ranger</h3>
+                        <div class="story-price">
+                            $14,500 <span>Cash Paid</span></div>
+                        <p>"Quick and easy process. I needed to sell my ute fast and
                             Caraway made it happen without any hassle."</p>
-                        <div class="story-author" style="margin-top: 1rem; font-weight: 600;">- Michael P.</div>
+                        <div class="story-author">- Michael P.</div>
                     </div>
                 </div>
             </div>

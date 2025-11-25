@@ -44,12 +44,12 @@
     
     /* Legacy color aliases for compatibility */
     --dark: #0f172a;
-    --text: #475569;
+    --text: #1f2933;
     --white: #ffffff;
     --light: #f1f5f9;
     
     --text-main: #0f172a;
-    --text-light: #64748b;
+    --text-light: #4b5563;
     --text-white: #f8fafc;
     
     --bg-body: #f8fafc;
@@ -918,6 +918,81 @@ footer {
 }
 
 /* ============================================
+   SUCCESS STORIES SECTION
+   ============================================ */
+.success-stories {
+    background: var(--bg-white);
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.story-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.story-location {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.story-date {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.story-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.story-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+
+.story-price span {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.story-card p {
+    color: var(--text-light);
+    flex-grow: 1;
+}
+
+.story-author {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ============================================
    TESTIMONIALS SECTION
    ============================================ */
 .testimonials {
@@ -1377,6 +1452,56 @@ footer {
     border-radius: var(--radius-lg);
 }
 
+.suburb-insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.insight-card {
+    background: var(--bg-body);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border-light);
+}
+
+.insight-metric {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.insight-card p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.suburb-faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.suburb-faq-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    padding: 1.5rem;
+}
+
+.suburb-faq-card h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.suburb-faq-card p {
+    color: var(--text-light);
+    margin: 0;
+}
+
 /* ============================================
    FOOTER STYLES
    ============================================ */
@@ -1555,6 +1680,13 @@ footer {
 .calc-guarantee p {
     font-size: 0.95rem;
     margin: 0;
+}
+
+.calc-error {
+    margin-top: 0.5rem;
+    color: var(--error);
+    font-size: 0.9rem;
+    display: none;
 }
 
 .quote-actions {
