@@ -120,6 +120,7 @@ document.querySelectorAll('.stat-number[data-count]').forEach(el => {
 const header = document.querySelector('.header');
 
 function handleHeaderScroll() {
+    if (!header) return;
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
@@ -797,4 +798,87 @@ document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
             button_text: this.textContent.trim()
         });
     });
+});
+
+// ============================================
+// MULTI-STEP WIZARD LOGIC
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const wizardForm = document.getElementById('quoteForm');
+    if (!wizardForm) return;
+
+    const steps = wizardForm.querySelectorAll('.wizard-step');
+    const nextBtns = wizardForm.querySelectorAll('.next-step');
+    const prevBtns = wizardForm.querySelectorAll('.prev-step');
+    const progressBar = wizardForm.querySelector('.progress-bar');
+    const stepsIndicator = wizardForm.querySelector('.steps-indicator');
+    
+    if (!steps.length) return;
+
+    let currentStep = 1;
+    const totalSteps = steps.length;
+
+    function updateWizard(step) {
+        // Update steps visibility
+        steps.forEach(s => {
+            if (parseInt(s.dataset.step) === step) {
+                s.classList.add('active');
+            } else {
+                s.classList.remove('active');
+            }
+        });
+
+        // Update progress bar
+        const progress = (step / totalSteps) * 100;
+        if (progressBar) progressBar.style.width = `${progress}%`;
+        
+        // Update indicator
+        if (stepsIndicator) stepsIndicator.textContent = `Step ${step} of ${totalSteps}`;
+        
+        // Scroll to top of form
+        const formTop = wizardForm.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: formTop, behavior: 'smooth' });
+    }
+
+    function validateStep(step) {
+        const currentStepEl = wizardForm.querySelector(`.wizard-step[data-step="${step}"]`);
+        const inputs = currentStepEl.querySelectorAll('input[required], select[required], textarea[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('error');
+                // Trigger browser validation UI if possible, or custom
+                input.reportValidity();
+            } else {
+                input.classList.remove('error');
+            }
+        });
+
+        return isValid;
+    }
+
+    nextBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateWizard(currentStep);
+                }
+            }
+        });
+    });
+
+    prevBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateWizard(currentStep);
+            }
+        });
+    });
+    
+    // Initial update
+    updateWizard(1);
 });

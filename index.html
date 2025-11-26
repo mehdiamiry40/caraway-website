@@ -53,6 +53,12 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="apple-touch-icon" href="logo.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="apple-touch-icon" href="logo.svg">
 
 
     <!-- Favicon -->
@@ -530,29 +536,60 @@
     <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-content container">
-                <h1 class="hero-title">Cash for Cars Brisbane<br><span>Up to $15,000</span> Instant Cash</h1>
-                <p class="hero-subtitle">Brisbane's #1 trusted cash for cars service. We offer the highest cash payments
-                    for all vehicles. Free quotes, same-day pickup, and instant payment.</p>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number" data-count="5000" data-suffix="+">0</div>
-                        <div class="stat-label">Cars Purchased</div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Cash for Cars Brisbane<br><span>Up to $15,000</span> Instant Cash</h1>
+                        <p class="hero-subtitle">Brisbane's #1 trusted cash for cars service. We offer the highest cash payments
+                            for all vehicles. Free quotes, same-day pickup, and instant payment.</p>
+        
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number" data-count="5000" data-suffix="+">0</div>
+                                <div class="stat-label">Cars Purchased</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="5" data-prefix="$" data-suffix="M+">$0</div>
+                                <div class="stat-label">Paid to Customers</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="24" data-suffix="/7">0</div>
+                                <div class="stat-label">Available Service</div>
+                            </div>
+                        </div>
+        
+                        <div class="hero-buttons">
+                            <a href="#get-quote" class="btn btn-primary btn-large">Get Free Quote</a>
+                            <a href="tel:+61481438444" class="btn btn-secondary btn-large">Call Now</a>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="5" data-prefix="$" data-suffix="M+">$0</div>
-                        <div class="stat-label">Paid to Customers</div>
+                    <div class="hero-visual">
+                        <div class="car-illustration">
+                            <!-- Modern Abstract Car SVG -->
+                            <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="var(--accent)" />
+                                        <stop offset="100%" stop-color="var(--accent-hover)" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Background Elements -->
+                                <circle cx="300" cy="200" r="180" fill="var(--accent-light)" opacity="0.2" />
+                                <circle cx="300" cy="200" r="140" fill="var(--accent-light)" opacity="0.3" />
+                                
+                                <!-- Stylized Car -->
+                                <path d="M100,260 L500,260 L520,220 L480,160 L380,140 L200,140 L140,180 L80,220 Z" fill="url(#carGradient)" class="car-body" />
+                                <circle cx="160" cy="260" r="35" fill="var(--ink)" class="car-wheel" />
+                                <circle cx="440" cy="260" r="35" fill="var(--ink)" class="car-wheel" />
+                                <circle cx="160" cy="260" r="15" fill="#ddd" />
+                                <circle cx="440" cy="260" r="15" fill="#ddd" />
+                                
+                                <!-- Speed Lines -->
+                                <path d="M40,280 L-20,280" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity="0.2" />
+                                <path d="M20,300 L-40,300" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" opacity="0.2" />
+                            </svg>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="24" data-suffix="/7">0</div>
-                        <div class="stat-label">Available Service</div>
-                    </div>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="#get-quote" class="btn btn-primary btn-large">Get Free Quote</a>
-                    <a href="tel:+61481438444" class="btn btn-secondary btn-large">Call Now</a>
                 </div>
             </div>
         </section>
@@ -981,75 +1018,104 @@
         <!-- Quote Form Section -->
         <section id="get-quote" class="quote-form">
             <div class="container">
-                <h2 class="section-title">Get Your Free Cash for Cars Quote</h2>
-                <p class="section-subtitle">Fill out the form below and receive your instant quote for cash for cars
-                    Brisbane</p>
-                <form class="form" id="quoteForm" method="POST" action="https://formsubmit.co/info@caraway.au"
-                    aria-label="Get cash for cars quote">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9\s\-+()]+" inputmode="tel"
-                                placeholder="04 1234 5678" required aria-describedby="phone-hint">
-                            <span id="phone-hint" class="sr-only">Enter your Australian phone number</span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="suburb">Suburb (Brisbane)</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="e.g., Fortitude Valley">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="make">Car Make *</label>
-                            <input type="text" id="make" name="make" placeholder="e.g., Toyota" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="model">Car Model *</label>
-                            <input type="text" id="model" name="model" placeholder="e.g., Camry" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="year">Year *</label>
-                            <input type="number" id="year" name="year" min="1900" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="condition">Condition *</label>
-                            <select id="condition" name="condition" required>
-                                <option value="">Select Condition</option>
-                                <option value="excellent">Excellent</option>
-                                <option value="good">Good</option>
-                                <option value="fair">Fair</option>
-                                <option value="poor">Poor</option>
-                                <option value="not-running">Not Running</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" rows="4"
-                            placeholder="Tell us about your car..."></textarea>
-                    </div>
+                <form class="form" id="quoteForm" method="POST" action="https://formsubmit.co/info@caraway.au" aria-label="Get cash for cars quote">
                     <!-- FormSubmit Configuration -->
                     <input type="hidden" name="_subject" value="New Cash for Cars Quote Request - Caraway">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="">
-                    <input type="hidden" name="_autoresponse"
-                        value="Thank you for contacting Caraway! We've received your quote request and will contact you shortly with your cash for cars quote.">
-                    <div id="form-message" class="form-message" role="alert" aria-live="polite" aria-atomic="true">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting Caraway! We've received your quote request and will contact you shortly with your cash for cars quote.">
+
+                    <div class="wizard-header">
+                        <h2 class="section-title" style="margin-bottom: var(--space-2);">Get Your Free Cash for Cars Quote</h2>
+                        <p class="section-subtitle" style="margin-bottom: var(--space-6);">Complete the form in 3 simple steps</p>
+                        <div class="wizard-progress">
+                            <div class="progress-track">
+                                <div class="progress-bar" style="width: 33%"></div>
+                            </div>
+                            <div class="steps-indicator">Step 1 of 3</div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-large" id="submitBtn">Get My Free Quote</button>
+                    
+                    <div id="form-message" class="form-message" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+                    <!-- STEP 1: Vehicle Details -->
+                    <div class="wizard-step active" data-step="1">
+                        <h4>Vehicle Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="make">Car Make *</label>
+                                <input type="text" id="make" name="make" placeholder="e.g., Toyota" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Car Model *</label>
+                                <input type="text" id="model" name="model" placeholder="e.g., Camry" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Year *</label>
+                                <input type="number" id="year" name="year" min="1900" placeholder="e.g., 2015" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="condition">Condition *</label>
+                                <select id="condition" name="condition" required>
+                                    <option value="">Select Condition</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                    <option value="poor">Poor</option>
+                                    <option value="not-running">Not Running</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="wizard-buttons right">
+                            <button type="button" class="btn btn-primary next-step">Next Step →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Contact Info -->
+                    <div class="wizard-step" data-step="2">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9\s\-+()]+" inputmode="tel" placeholder="04 1234 5678" required aria-describedby="phone-hint">
+                                <span id="phone-hint" class="sr-only">Enter your Australian phone number</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="suburb">Suburb (Brisbane)</label>
+                                <input type="text" id="suburb" name="suburb" placeholder="e.g., Fortitude Valley">
+                            </div>
+                        </div>
+                        <div class="wizard-buttons">
+                            <button type="button" class="btn btn-secondary prev-step">← Back</button>
+                            <button type="button" class="btn btn-primary next-step">Next Step →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Final Details -->
+                    <div class="wizard-step" data-step="3">
+                        <h4>Additional Details</h4>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your car..."></textarea>
+                        </div>
+                        <div class="wizard-buttons">
+                            <button type="button" class="btn btn-secondary prev-step">← Back</button>
+                            <button type="submit" class="btn btn-accent btn-large" id="submitBtn" style="min-width: 200px;">Get My Free Quote</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </section>
@@ -1813,6 +1879,21 @@
             <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
         </svg>
     </button>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>

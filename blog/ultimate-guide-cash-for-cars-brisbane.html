@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../logo.svg">
     
     <!-- Schema.org Article -->
@@ -136,23 +136,45 @@
     <header class="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="../index.html">
-                    <img src="../logo.svg" alt="Caraway - Cash for Cars Brisbane Logo" class="logo-img" width="160" height="50">
+                <a href="../index.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 2px;">
+                    <img src="../logo.svg" alt="Caraway Cash for Cars Brisbane - Top Car Buyer" class="logo-img" width="160" height="50">
+                    <span class="tagline">Cash for Cars Brisbane</span>
                 </a>
-                <span class="tagline">Cash for Cars Brisbane</span>
             </div>
-            <ul class="nav-menu" role="menubar">
+            <ul id="primary-navigation" class="nav-menu" role="menubar">
                 <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
                 <li role="none"><a href="../index.html#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="../index.html#why-choose-us" role="menuitem">Why Choose Us</a></li>
                 <li role="none"><a href="../index.html#get-quote" role="menuitem">Get Quote</a></li>
                 <li role="none"><a href="../index.html#faq" role="menuitem">FAQ</a></li>
                 <li role="none"><a href="../index.html#contact" role="menuitem">Contact</a></li>
             </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+            <div class="nav-actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                    aria-controls="primary-navigation" type="button">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -249,44 +271,59 @@
         </article>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="../logo.svg" alt="Caraway - Cash for Cars Brisbane Logo" class="footer-logo" width="160" height="50" loading="lazy">
-                    <h3>Caraway</h3>
-                    <p>Brisbane's trusted cash for cars service. Get instant cash for your vehicle today!</p>
+                    <img src="../logo.svg" alt="Caraway Cash for Cars Brisbane - Top Car Buyer" class="footer-logo"
+                        width="160" height="50" loading="lazy">
+                    <h3>Caraway - Cash for Cars Brisbane</h3>
+                    <p>Brisbane's #1 trusted <strong>cash for cars</strong> service since 2019. Get instant cash up to $15,000 for your vehicle today! We buy all makes and models in any condition.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Cash for Cars Brisbane</h4>
                     <ul>
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#how-it-works">How It Works</a></li>
+                        <li><a href="../index.html#home">Cash for Cars Home</a></li>
+                        <li><a href="../index.html#how-it-works">How Cash for Cars Works</a></li>
                         <li><a href="../index.html#why-choose-us">Why Choose Us</a></li>
-                        <li><a href="../index.html#get-quote">Get Quote</a></li>
-                        <li><a href="../index.html#faq">FAQ</a></li>
+                        <li><a href="../index.html#get-quote">Get Cash for Cars Quote</a></li>
+                        <li><a href="../faq.html">Cash for Cars FAQ</a></li>
+                        <li><a href="../instant-cash-for-cars-brisbane.html">Instant Cash for Cars</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Brisbane Suburbs</h4>
                     <ul>
-                        <li>Cash for Cars Brisbane</li>
-                        <li>Car Removal Brisbane</li>
-                        <li>We Buy Cars Brisbane</li>
-                        <li>Instant Cash for Cars</li>
+                        <li><a href="../cash-for-cars-chermside.html">Cash for Cars Chermside</a></li>
+                        <li><a href="../cash-for-cars-sunnybank.html">Cash for Cars Sunnybank</a></li>
+                        <li><a href="../cash-for-cars-toowong.html">Cash for Cars Toowong</a></li>
+                        <li><a href="../index.html#brisbane-suburbs-coverage">All Brisbane Suburbs</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4>Resources</h4>
                     <ul>
-                        <li>Phone: <a href="tel:+61481438444">04 8143 8444</a></li>
-                        <li>Email: <a href="mailto:info@caraway.au">info@caraway.au</a></li>
-                        <li>Location: 20 Bonemill Rd, Runcorn QLD 4113</li>
+                        <li><a href="ultimate-guide-cash-for-cars-brisbane.html">Ultimate Cash for Cars Guide</a></li>
+                        <li><a href="10-tips-maximize-cash-for-cars-price.html">Get Best Price Tips</a></li>
+                        <li><a href="what-paperwork-needed-cash-for-cars.html">Required Paperwork</a></li>
+                        <li><a href="cash-for-cars-vs-private-sale.html">Cash for Cars vs Private Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>📞 <a href="tel:+61481438444">04 8143 8444</a></li>
+                        <li>✉️ <a href="mailto:info@caraway.au">info@caraway.au</a></li>
+                        <li>💬 <a href="https://wa.me/61481438444" target="_blank" rel="noopener">WhatsApp Us</a></li>
+                        <li>📍 20 Bonemill Rd, Runcorn QLD 4113</li>
                     </ul>
                 </div>
             </div>
+            <div class="footer-seo">
+                <p><strong>Cash for Cars Brisbane</strong> | <a href="../index.html#get-quote">Sell My Car Brisbane</a> | <a href="../index.html#why-choose-us">Car Buyer Brisbane</a> | <a href="../instant-cash-for-cars-brisbane.html">Instant Cash for Cars</a> | <a href="../index.html#brisbane-suburbs-coverage">Car Removal Brisbane</a> | <a href="how-to-sell-damaged-car-cash-for-cars.html">Sell Damaged Car Brisbane</a></p>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Caraway - Cash for Cars Brisbane. All rights reserved.</p>
+                <p>&copy; 2025 Caraway - Cash for Cars Brisbane. All rights reserved. | <a href="https://www.caraway.com.au">www.caraway.com.au</a></p>
             </div>
         </div>
     </footer>

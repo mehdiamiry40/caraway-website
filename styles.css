@@ -440,10 +440,16 @@ a {
     background: linear-gradient(90deg, transparent, var(--stone-200), transparent);
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
 }
 
 .hero-title {
@@ -497,6 +503,64 @@ a {
     flex-wrap: wrap;
 }
 
+.hero-visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.car-illustration {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Car animation details */
+.car-wheel {
+    transform-origin: center;
+    /* animation: spin 2s linear infinite; Remove spin as it might look weird on a static car */
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .hero-content {
+        order: 2; /* Content below image on mobile? Usually content first is better for SEO/UX */
+        order: 1;
+    }
+    
+    .hero-visual {
+        order: 2;
+        margin-top: var(--space-8);
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
@@ -506,6 +570,15 @@ a {
     .hero-stats {
         flex-direction: column;
         gap: var(--space-6);
+        border: none;
+        padding: 0;
+    }
+    
+    .stat {
+        text-align: center;
+        background: var(--stone-50);
+        padding: var(--space-4);
+        border-radius: var(--radius);
     }
     
     .hero-buttons {
@@ -2520,4 +2593,80 @@ textarea:focus-visible {
     to {
         opacity: 1;
     }
+}
+
+/* ============================================
+   WIZARD FORM
+   ============================================ */
+.wizard-step {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.wizard-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wizard-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.wizard-progress {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.progress-track {
+    background: var(--stone-200);
+    height: 6px;
+    border-radius: 3px;
+    margin-bottom: var(--space-3);
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: var(--accent);
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease-out;
+}
+
+.steps-indicator {
+    font-size: var(--text-sm);
+    color: var(--stone-500);
+    font-weight: 500;
+}
+
+.wizard-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.wizard-buttons.right {
+    justify-content: flex-end;
+}
+
+.wizard-step h4 {
+    font-size: var(--text-lg);
+    color: var(--ink);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--stone-200);
+}
+
+[data-theme="dark"] .wizard-step h4 {
+    color: var(--ink);
+    border-color: var(--stone-200);
+}
+
+[data-theme="dark"] .progress-track {
+    background: var(--stone-200);
 }
