@@ -1,3 +1,135 @@
+// ============================================
+// DARK MODE TOGGLE
+// ============================================
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to system preference
+function getPreferredTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// Apply theme
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+    } else {
+        html.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', theme);
+}
+
+// Initialize theme
+applyTheme(getPreferredTheme());
+
+// Toggle theme on button click
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        
+        // Add a subtle animation
+        themeToggle.style.transform = 'scale(0.9) rotate(180deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = '';
+        }, 200);
+    });
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+    }
+});
+
+// ============================================
+// MOBILE STICKY CTA
+// ============================================
+const mobileCTA = document.getElementById('mobile-sticky-cta');
+const heroSection = document.getElementById('home');
+
+function handleMobileCTA() {
+    if (!mobileCTA || !heroSection) return;
+    
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    const shouldShow = heroBottom < 0;
+    
+    if (shouldShow) {
+        mobileCTA.classList.add('show');
+    } else {
+        mobileCTA.classList.remove('show');
+    }
+}
+
+window.addEventListener('scroll', handleMobileCTA);
+handleMobileCTA(); // Check on load
+
+// ============================================
+// ANIMATED NUMBER COUNTERS
+// ============================================
+function animateCounter(element) {
+    const target = parseInt(element.dataset.count, 10);
+    const prefix = element.dataset.prefix || '';
+    const suffix = element.dataset.suffix || '';
+    const duration = 2000; // 2 seconds
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    const easeOutQuad = t => t * (2 - t); // Easing function
+    
+    let frame = 0;
+    element.classList.add('counting');
+    
+    const counter = setInterval(() => {
+        frame++;
+        const progress = easeOutQuad(frame / totalFrames);
+        const currentCount = Math.round(target * progress);
+        
+        element.textContent = prefix + currentCount.toLocaleString() + suffix;
+        
+        if (frame === totalFrames) {
+            clearInterval(counter);
+            element.classList.remove('counting');
+        }
+    }, frameDuration);
+}
+
+// Observer for number counters
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.dataset.count) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observe all stat numbers with data-count attribute
+document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+    counterObserver.observe(el);
+});
+
+// ============================================
+// HEADER SCROLL EFFECT
+// ============================================
+const header = document.querySelector('.header');
+
+function handleHeaderScroll() {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}
+
+window.addEventListener('scroll', handleHeaderScroll);
+handleHeaderScroll(); // Check on load
+
 // Mobile Navigation Toggle with Animation and Accessibility
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -229,23 +361,32 @@ if (quoteForm) {
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Add staggered delay based on sibling index
+            const parent = entry.target.parentElement;
+            const siblings = Array.from(parent.children);
+            const itemIndex = siblings.indexOf(entry.target);
+            
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, itemIndex * 100);
+            
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.step, .benefit, .area, .story-card, .vehicle-card').forEach(el => {
+// Observe elements for animation with staggered effect
+document.querySelectorAll('.step, .benefit, .area, .story-card, .vehicle-card, .trust-item, .factor, .blog-card, .local-benefit, .region, .faq-item, .testimonial').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
     observer.observe(el);
 });
 
