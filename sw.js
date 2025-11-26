@@ -8,6 +8,7 @@ const PRECACHE_ASSETS = [
   './styles.css',
   './script.js',
   './logo.svg',
+  './images/hero-car.jpg',
   './manifest.json',
   './offline.html',
   './faq.html',

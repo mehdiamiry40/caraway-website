@@ -512,26 +512,16 @@ a {
     transition: transform var(--duration-normal) var(--ease-out);
 }
 
-.car-illustration {
+.hero-image {
     width: 100%;
     max-width: 600px;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
-    animation: float 6s ease-in-out infinite;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    filter: brightness(1.05) contrast(1.05);
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Car animation details */
-.car-wheel {
-    transform-origin: center;
-    /* animation: spin 2s linear infinite; Remove spin as it might look weird on a static car */
-}
-
+/* Removed car illustration animations */
 @media (max-width: 900px) {
     .hero-grid {
         grid-template-columns: 1fr;
