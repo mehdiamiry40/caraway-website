@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cash for Cars Brisbane FAQ - Get answers to all your questions about selling your car for cash in Brisbane. Expert advice, process details, and pricing information.">
-    <meta name="keywords" content="cash for cars brisbane faq, cash for cars questions, car selling brisbane, instant cash brisbane, car buyer brisbane faq">
+    <meta name="description" content="Frequently asked questions about cash for cars Brisbane. Get answers about pricing, process, vehicle conditions, and more from Caraway.">
+    <meta name="keywords" content="cash for cars brisbane faq, sell car questions, car removal brisbane, vehicle selling guide">
     <meta name="author" content="Caraway">
     <meta name="robots" content="index, follow">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.caraway.com.au/faq.html">
+    <link rel="canonical" href="https://www.caraway.com.au/faq">
     
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.caraway.com.au/faq.html">
-    <meta property="og:title" content="Cash for Cars Brisbane FAQ - All Questions Answered | Caraway">
-    <meta property="og:description" content="Get answers to all your cash for cars Brisbane questions. Process, pricing, paperwork, and service details explained by Brisbane's #1 car buying service.">
-    <meta property="og:image" content="https://www.caraway.com.au/logo.svg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cash for Cars Brisbane FAQ - All Questions Answered">
-    <meta name="twitter:description" content="Get answers to all your cash for cars Brisbane questions. Process, pricing, paperwork, and service details explained.">
-    
-    <title>Cash for Cars Brisbane FAQ - All Questions Answered | Caraway</title>
+    <title>FAQ - Cash for Cars Brisbane Questions Answered | Caraway</title>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
     
-    <!-- Schema.org FAQPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,34 +27,42 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How quickly can I get cash for my car in Brisbane?",
+                "name": "How much cash can I get for my car in Brisbane?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We offer same-day cash for cars service in Brisbane. Once we inspect your vehicle and agree on a price, you can receive instant cash payment on the spot!"
+                    "text": "Caraway offers up to $15,000 cash for cars in Brisbane. The exact amount depends on your vehicle's make, model, year, and condition."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Do you buy cars that don't run?",
+                "name": "How quickly can I get cash for my car?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! We buy cars in any condition - running, non-running, damaged, written-off, or old. Cash for cars Brisbane means we accept all vehicles regardless of condition."
+                    "text": "With Caraway's cash for cars Brisbane service, you can get paid the same day! Our process takes less than 3 hours from first contact to cash in hand."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Is the cash for cars quote free?",
+                "name": "Do you buy cars in any condition?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolutely! All cash for cars quotes are completely free with no obligations. Contact us today for your free Brisbane cash for cars quote."
+                    "text": "Yes! We accept ALL vehicles regardless of condition - running, non-running, accident damaged, flood-affected, written-off, old, and even scrap cars."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Do you charge for car removal in Brisbane?",
+                "name": "Is there a fee for car removal?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No! We provide free car removal service throughout Brisbane and surrounding areas. Our cash for cars service includes free pickup at your location."
+                    "text": "No! Caraway provides completely FREE car removal throughout Brisbane and surrounding areas including Logan, Ipswich, Redcliffe, and the Gold Coast."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What documents do I need to sell my car?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You'll need: Valid photo ID, Vehicle registration papers, and Proof of ownership. We handle all transfer paperwork for you!"
                 }
             }
         ]
@@ -74,420 +70,491 @@
     </script>
     
     <style>
-        .faq-page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--white);
-            padding: 4rem 0;
+        .faq-page-hero {
+            background: var(--white);
+            padding: calc(var(--space-32) + 40px) 0 var(--space-16);
             text-align: center;
         }
         
-        .faq-page-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-        
-        .faq-page-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .faq-search-container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: var(--space-8) auto 0;
+            position: relative;
         }
         
-        .faq-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
+        .faq-search {
+            width: 100%;
+            padding: var(--space-5) var(--space-6);
+            padding-left: 56px;
+            font-size: var(--text-lg);
+            border: 2px solid var(--stone-200);
+            border-radius: var(--radius-full);
+            background: var(--stone-50);
+            transition: all var(--duration-normal) var(--ease-out);
         }
         
-        .faq-category {
-            margin-bottom: 3rem;
+        .faq-search:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 4px var(--accent-light);
         }
         
-        .faq-category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--primary-color);
+        .faq-search-icon {
+            position: absolute;
+            left: var(--space-5);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--stone-400);
+            pointer-events: none;
         }
         
-        .faq-cta {
-            background: var(--light);
-            padding: 3rem;
-            border-radius: 12px;
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-3);
+            margin-top: var(--space-6);
+        }
+        
+        .faq-category-btn {
+            padding: var(--space-2) var(--space-4);
+            border: 1px solid var(--stone-200);
+            border-radius: var(--radius-full);
+            background: var(--white);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--stone-600);
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-out);
+        }
+        
+        .faq-category-btn:hover,
+        .faq-category-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+        
+        .faq-page-content {
+            padding: var(--space-16) 0;
+        }
+        
+        .faq-count {
             text-align: center;
-            margin-top: 3rem;
+            color: var(--stone-500);
+            margin-bottom: var(--space-8);
+            font-size: var(--text-sm);
         }
         
-        .faq-cta h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
+        .faq-no-results {
+            text-align: center;
+            padding: var(--space-12);
+            color: var(--stone-500);
+            display: none;
         }
         
-        .faq-cta p {
-            font-size: 1.1rem;
-            color: var(--text);
-            margin-bottom: 2rem;
+        .faq-no-results.show {
+            display: block;
+        }
+        
+        .faq-item[data-hidden="true"] {
+            display: none;
+        }
+        
+        [data-theme="dark"] .faq-search {
+            background: var(--stone-100);
+            border-color: var(--stone-200);
+            color: var(--ink);
+        }
+        
+        [data-theme="dark"] .faq-search:focus {
+            background: var(--stone-200);
+        }
+        
+        [data-theme="dark"] .faq-category-btn {
+            background: var(--stone-100);
+            border-color: var(--stone-200);
+            color: var(--stone-500);
+        }
+        
+        [data-theme="dark"] .faq-page-hero {
+            background: var(--stone-100);
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="index.html">
-                    <img src="logo.svg" alt="Caraway - Cash for Cars Brisbane Logo" class="logo-img" width="160" height="50">
+                <a href="index.html" style="text-decoration: none; display: flex; flex-direction: column; gap: 2px;">
+                    <img src="logo.svg" alt="Caraway Cash for Cars Brisbane" class="logo-img" width="160" height="50">
+                    <span class="tagline">Cash for Cars Brisbane</span>
                 </a>
-                <span class="tagline">Cash for Cars Brisbane</span>
             </div>
-            <ul class="nav-menu" role="menubar">
+            <ul id="primary-navigation" class="nav-menu" role="menubar">
                 <li role="none"><a href="index.html#home" role="menuitem">Home</a></li>
                 <li role="none"><a href="index.html#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="index.html#why-choose-us" role="menuitem">Why Choose Us</a></li>
                 <li role="none"><a href="index.html#get-quote" role="menuitem">Get Quote</a></li>
-                <li role="none"><a href="#faq-main" role="menuitem">FAQ</a></li>
+                <li role="none"><a href="faq.html" role="menuitem" class="active">FAQ</a></li>
                 <li role="none"><a href="index.html#contact" role="menuitem">Contact</a></li>
             </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation" type="button">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main id="main-content">
-        <header class="faq-page-header">
+    <main id="main-content" tabindex="-1">
+        <section class="faq-page-hero">
             <div class="container">
-                <h1 class="faq-page-title">Cash for Cars Brisbane FAQ</h1>
-                <p class="faq-page-subtitle">Get answers to all your questions about selling your car for cash in Brisbane</p>
+                <h1 class="section-title">Frequently Asked Questions</h1>
+                <p class="section-subtitle" style="margin-bottom: 0;">Everything you need to know about selling your car for cash in Brisbane</p>
+                
+                <div class="faq-search-container">
+                    <svg class="faq-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    <input type="search" class="faq-search" id="faq-search" placeholder="Search questions..." aria-label="Search frequently asked questions">
+                </div>
+                
+                <div class="faq-categories" role="group" aria-label="Filter by category">
+                    <button class="faq-category-btn active" data-category="all">All</button>
+                    <button class="faq-category-btn" data-category="pricing">Pricing</button>
+                    <button class="faq-category-btn" data-category="process">Process</button>
+                    <button class="faq-category-btn" data-category="vehicles">Vehicles</button>
+                    <button class="faq-category-btn" data-category="documents">Documents</button>
+                    <button class="faq-category-btn" data-category="service">Service</button>
+                </div>
             </div>
-        </header>
-
-        <div class="faq-content">
-            <section id="faq-main" class="faq">
-                <div class="faq-list">
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Getting Started with Cash for Cars Brisbane</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">How quickly can I get cash for my car in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We offer same-day cash for cars service in Brisbane. Once we inspect your vehicle and agree on a price, you can receive instant cash payment on the spot! Our process typically takes less than 3 hours from initial contact to cash in hand.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What information do I need to get a cash for cars quote in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">To get your cash for cars Brisbane quote, we'll need: Car make and model, year of manufacture, current condition (running/not running), odometer reading, and general condition description. You can provide this over the phone or through our online form.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Is the cash for cars quote really free?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Absolutely! All cash for cars quotes are completely free with no obligations. Contact us today for your free Brisbane cash for cars quote. There's no cost for the inspection, quote, or any preliminary service.</p>
-                            </div>
+        </section>
+        
+        <section class="faq-page-content">
+            <div class="container">
+                <p class="faq-count" id="faq-count">Showing all 12 questions</p>
+                
+                <div class="faq-list" id="faq-list">
+                    <!-- Pricing -->
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">How much cash can I get for my car in Brisbane?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">Caraway offers up to <strong>$15,000 cash</strong> for cars in Brisbane. The exact amount depends on your vehicle's make, model, year, and condition. Late-model vehicles in good condition typically get $8,000-$15,000, while older or damaged cars can still fetch $500-$5,000. Contact us for a free quote!</p>
                         </div>
                     </div>
-
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Vehicle Conditions & Types</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Do you buy cars that don't run?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Yes! We buy cars in any condition - running, non-running, damaged, written-off, or old. Cash for cars Brisbane means we accept all vehicles regardless of condition. We provide cash for cars Brisbane services even for vehicles that haven't run for years.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What types of vehicles do you buy in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We buy all types of vehicles for cash in Brisbane including: cars (sedans, hatchbacks, coupes), SUVs and 4WDs, vans and utes, trucks and commercial vehicles, sports cars and luxury vehicles, motorcycles, and damaged or non-running vehicles.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Do you buy accident-damaged cars in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Yes! We specialize in buying accident-damaged cars for cash in Brisbane. Whether your vehicle has minor damage, major collision damage, or flood damage, we still offer cash for cars Brisbane services. We assess each vehicle individually and provide fair cash offers.</p>
-                            </div>
+                    
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">What factors affect my car's cash value?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">Several factors determine your car's value: <strong>Make and model</strong> (popular brands like Toyota fetch higher prices), <strong>Year</strong> (newer = more valuable), <strong>Condition</strong> (running vs non-running), <strong>Mileage</strong>, <strong>Service history</strong>, and current <strong>market demand</strong> in Brisbane.</p>
                         </div>
                     </div>
-
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Pricing & Payment</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">How do you determine the cash for cars price in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We assess your vehicle based on make, model, year, condition, mileage, and current market value in Brisbane. We offer competitive cash for cars prices based on fair market valuation. We also consider salvage value, scrap metal prices, and parts value.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What payment methods do you accept for cash for cars?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We pay cash on the spot! You receive instant cash payment when we pick up your vehicle. Cash for cars Brisbane means real cash, not cheques or bank transfers. We also offer electronic transfer if preferred, but cash is always available.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Can I sell my car for cash if it's still under finance?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Yes, we can help! If you have finance remaining, we'll work with you to settle the finance and provide cash for the remaining value. Contact us to discuss your situation and we'll guide you through the process of selling yourfinanced car for cash in Brisbane.</p>
-                            </div>
+                    
+                    <!-- Process -->
+                    <div class="faq-item" data-category="process">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">How quickly can I get cash for my car?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">With Caraway's cash for cars Brisbane service, you can get paid <strong>the same day!</strong> Our process takes less than 3 hours from first contact to cash in hand. Call us, get your quote, schedule pickup, and receive instant cash payment on the spot.</p>
                         </div>
                     </div>
-
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Service Areas & Pickup</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What areas do you service for cash for cars in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We provide cash for cars service throughout Brisbane, including all suburbs, Logan, Ipswich, Redcliffe, Caboolture, and surrounding areas. Our service covers North Brisbane, South Brisbane, East Brisbane, West Brisbane, and all surrounding regions within 50km of Brisbane CBD.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Do you charge for car removal in Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">No! We provide free car removal service throughout Brisbane and surrounding areas. Our cash for cars service includes free pickup at your location. There are no hidden charges or additional fees for removal services anywhere in Brisbane.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What time do you operate for cash for cars Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">We're open Monday to Saturday, 8:00 AM to 6:00 PM for cash for cars Brisbane service. Sunday appointments are available by arrangement. We also offer emergency pickup services 24/7 for urgent cash for cars needs in Brisbane.</p>
-                            </div>
+                    
+                    <div class="faq-item" data-category="process">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">What is the step-by-step process?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer"><strong>Step 1:</strong> Contact us with your car details and get a free quote. <strong>Step 2:</strong> Accept the offer and schedule a pickup time. <strong>Step 3:</strong> We come to you, inspect the vehicle, and pay you cash on the spot. It's that simple!</p>
                         </div>
                     </div>
-
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Paperwork & Legal</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">What paperwork do I need to sell my car for cash?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">You'll need your vehicle registration, proof of ownership, and a valid ID. We'll handle all the paperwork and transfer process - making cash for cars Brisbane easy! Don't worry if you're missing some documents - most cash for cars Brisbane services can work with you to resolve ownership issues.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Do I need to get my car inspected before selling for cash?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">No pre-inspection needed! Our team will inspect your vehicle at the time of pickup in Brisbane. This inspection is free and helps us provide you with the most accurate cash for cars quote. You can also send photos via email or text for a preliminary quote.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Is Caraway a licensed cash for cars Brisbane service?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Yes! Caraway is a fully licensed motor dealer in Queensland with comprehensive insurance coverage. We comply with all Queensland motor dealer regulations and provide secure, professional cash for cars Brisbane services. All our transactions are legal and transparent.</p>
-                            </div>
+                    
+                    <!-- Vehicles -->
+                    <div class="faq-item" data-category="vehicles">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">Do you buy cars in any condition?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer"><strong>Yes!</strong> We accept ALL vehicles regardless of condition. We buy running cars, non-running cars, accident damaged vehicles, flood-affected cars, written-off vehicles, old cars, and even scrap cars. Every car has value!</p>
                         </div>
                     </div>
-
-                    <div class="faq-category">
-                        <h2 class="faq-category-title">Why Choose Caraway</h2>
-                        
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Why choose Caraway for cash for cars Brisbane?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Caraway offers the best cash for cars service in Brisbane with top prices, instant payment, free pickup, and trusted service. We've helped thousands of Brisbane residents sell their cars for cash quickly and easily! We provide the highest cash for cars Brisbane prices with professional, reliable service.</p>
-                            </div>
+                    
+                    <div class="faq-item" data-category="vehicles">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">What types of vehicles do you buy?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">We buy all types: <strong>Cars</strong> (sedans, hatchbacks, coupes), <strong>SUVs & 4WDs</strong>, <strong>Vans & Utes</strong>, <strong>Trucks</strong>, <strong>Commercial vehicles</strong>, and <strong>Luxury cars</strong>. All makes and models welcome - Toyota, Mazda, Ford, Holden, Nissan, Honda, BMW, Mercedes, and more!</p>
                         </div>
-
-                        <div class="faq-item">
-                            <button class="faq-header" aria-expanded="false">
-                                <h3 class="faq-question">Do you guarantee your cash for cars Brisbane prices?</h3>
-                                <span class="faq-icon" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="faq-content">
-                                <p class="faq-answer">Yes! We offer a Best Price Guarantee for cash for cars Brisbane. If you receive a genuine quote from another licensed Brisbane buyer, we'll beat it by $100. We also guarantee same-day service, instant cash payment, and free pickup throughout Brisbane.</p>
-                            </div>
+                    </div>
+                    
+                    <!-- Documents -->
+                    <div class="faq-item" data-category="documents">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">What documents do I need to sell my car?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">You'll need: <strong>Valid photo ID</strong> (driver's license or passport), <strong>Vehicle registration papers</strong>, and <strong>Proof of ownership</strong> (if different from rego). Don't worry - we handle all the transfer paperwork for you!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="documents">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">Can I sell a car without registration?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer"><strong>Yes!</strong> We buy unregistered vehicles too. You'll just need proof of ownership and valid ID. Contact us to discuss your situation - we're flexible and can work with most circumstances.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service -->
+                    <div class="faq-item" data-category="service">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">Is there a fee for car removal?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer"><strong>No!</strong> Caraway provides completely FREE car removal throughout Brisbane and surrounding areas including Logan, Ipswich, Redcliffe, and the Gold Coast. Our cash for cars Brisbane service includes free pickup at your location.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="service">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">What areas do you service?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">We service all of <strong>Brisbane</strong> and surrounding areas within 50km, including: Chermside, Sunnybank, Toowong, Logan, Ipswich, Redcliffe, Caboolture, Redland Bay, and the northern Gold Coast. Not sure if we cover your area? Just ask!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="service">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">Why should I choose Caraway?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">Caraway is Brisbane's most trusted cash for cars service since 2019. We offer: <strong>Highest cash prices</strong> (up to $15,000), <strong>Instant same-day payment</strong>, <strong>Free pickup</strong>, <strong>All conditions accepted</strong>, professional licensed service, and a <strong>Best Price Guarantee</strong> - we'll beat any genuine quote by $100!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-header" aria-expanded="false">
+                            <h3 class="faq-question">How do I get a cash for cars quote?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-answer">Getting a quote is easy! <strong>Call us</strong> at 04 8143 8444, <strong>fill out our online form</strong>, or <strong>message us on WhatsApp</strong>. Provide your car's make, model, year, and condition. We'll give you an instant quote - completely free with no obligations!</p>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <div class="faq-cta">
-                <h3>Still Have Questions?</h3>
-                <p>Our Brisbane cash for cars experts are here to help! Get your free quote or ask any questions about selling your car for cash.</p>
-                <a href="tel:+61481438444" class="btn btn-primary btn-large">Call 04 8143 8444</a>
-                <a href="index.html#get-quote" class="btn btn-secondary btn-large">Get Free Quote</a>
+                
+                <div class="faq-no-results" id="faq-no-results">
+                    <h3>No questions found</h3>
+                    <p>Try a different search term or <a href="index.html#contact">contact us directly</a> with your question.</p>
+                </div>
+                
+                <div class="pricing-cta" style="margin-top: var(--space-16);">
+                    <p>Still have questions? We're here to help!</p>
+                    <a href="index.html#get-quote" class="btn btn-primary btn-large">Get Your Free Quote</a>
+                    <a href="tel:+61481438444" class="btn btn-secondary btn-large" style="margin-left: var(--space-4);">Call 04 8143 8444</a>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="logo.svg" alt="Caraway - Cash for Cars Brisbane Logo" class="footer-logo" width="160" height="50" loading="lazy">
-                    <h3>Caraway</h3>
-                    <p>Brisbane's trusted cash for cars service. Get instant cash for your vehicle today!</p>
+                    <img src="logo.svg" alt="Caraway Logo" class="footer-logo" width="140" height="45" loading="lazy">
+                    <h3>Caraway - Cash for Cars Brisbane</h3>
+                    <p>Brisbane's #1 trusted <strong>cash for cars</strong> service since 2019. Get instant cash up to $15,000 for your vehicle today!</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html#home">Home</a></li>
                         <li><a href="index.html#how-it-works">How It Works</a></li>
-                        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
                         <li><a href="index.html#get-quote">Get Quote</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Resources</h4>
                     <ul>
-                        <li>Cash for Cars Brisbane</li>
-                        <li>Car Removal Brisbane</li>
-                        <li>We Buy Cars Brisbane</li>
-                        <li>Instant Cash for Cars</li>
+                        <li><a href="blog/ultimate-guide-cash-for-cars-brisbane.html">Ultimate Guide</a></li>
+                        <li><a href="blog/10-tips-maximize-cash-for-cars-price.html">Get Best Price</a></li>
+                        <li><a href="blog/what-paperwork-needed-cash-for-cars.html">Required Paperwork</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4>Contact Us</h4>
                     <ul>
-                        <li>Phone: <a href="tel:+61481438444">04 8143 8444</a></li>
-                        <li>Email: <a href="mailto:info@caraway.au">info@caraway.au</a></li>
-                        <li>Location: 20 Bonemill Rd, Runcorn QLD 4113</li>
+                        <li>📞 <a href="tel:+61481438444">04 8143 8444</a></li>
+                        <li>✉️ <a href="mailto:info@caraway.au">info@caraway.au</a></li>
+                        <li>💬 <a href="https://wa.me/61481438444" target="_blank" rel="noopener">WhatsApp Us</a></li>
+                        <li>📍 20 Bonemill Rd, Runcorn QLD 4113</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Caraway - Cash for Cars Brisbane. All rights reserved.</p>
+                <p>&copy; 2025 Caraway - Cash for Cars Brisbane. All rights reserved. | <a href="https://www.caraway.com.au">www.caraway.com.au</a></p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
     
-    <!-- Vercel Speed Insights -->
-    <script defer src="https://va.vercel-scripts.com/v1/speed-insights/script.js"></script>
+    <script>
+    // FAQ Search & Filter
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('faq-search');
+        const categoryBtns = document.querySelectorAll('.faq-category-btn');
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqCount = document.getElementById('faq-count');
+        const noResults = document.getElementById('faq-no-results');
+        
+        let currentCategory = 'all';
+        
+        function filterFAQs() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                const category = item.dataset.category;
+                
+                const matchesSearch = searchTerm === '' || question.includes(searchTerm) || answer.includes(searchTerm);
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                
+                if (matchesSearch && matchesCategory) {
+                    item.setAttribute('data-hidden', 'false');
+                    item.style.display = '';
+                    visibleCount++;
+                } else {
+                    item.setAttribute('data-hidden', 'true');
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update count
+            if (visibleCount === 0) {
+                faqCount.style.display = 'none';
+                noResults.classList.add('show');
+            } else {
+                faqCount.style.display = '';
+                faqCount.textContent = `Showing ${visibleCount} question${visibleCount !== 1 ? 's' : ''}`;
+                noResults.classList.remove('show');
+            }
+        }
+        
+        // Search input
+        searchInput.addEventListener('input', filterFAQs);
+        
+        // Category buttons
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCategory = btn.dataset.category;
+                filterFAQs();
+            });
+        });
+        
+        // FAQ accordion (reuse existing logic)
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            
+            if (header) {
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    item.classList.toggle('active');
+                    header.setAttribute('aria-expanded', !isActive);
+                });
+                
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        header.click();
+                    }
+                });
+            }
+        });
+    });
+    </script>
 </body>
 </html>

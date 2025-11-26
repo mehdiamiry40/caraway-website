@@ -978,3 +978,97 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ============================================
+// COMPARE QUOTE WIDGET
+// ============================================
+const compareBtn = document.getElementById('compare-btn');
+const compareResult = document.getElementById('compare-result');
+const competitorInput = document.getElementById('competitor-quote');
+
+if (compareBtn && compareResult && competitorInput) {
+    compareBtn.addEventListener('click', () => {
+        const competitorQuote = parseFloat(competitorInput.value) || 0;
+        
+        if (competitorQuote <= 0) {
+            competitorInput.classList.add('error');
+            return;
+        }
+        
+        competitorInput.classList.remove('error');
+        
+        // Caraway beats by $100
+        const carawayQuote = competitorQuote + 100;
+        const savings = 100;
+        
+        document.getElementById('competitor-price').textContent = '$' + competitorQuote.toLocaleString();
+        document.getElementById('caraway-price').textContent = '$' + carawayQuote.toLocaleString();
+        document.getElementById('compare-savings').textContent = `You save $${savings} with Caraway!`;
+        
+        compareResult.classList.add('show');
+        
+        // Scroll to result
+        setTimeout(() => {
+            compareResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+        
+        // Track comparison
+        console.log('Quote comparison:', { competitor: competitorQuote, caraway: carawayQuote });
+    });
+    
+    competitorInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            compareBtn.click();
+        }
+    });
+}
+
+// ============================================
+// LAZY LOAD IMAGES WITH SKELETON
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    lazyImages.forEach(img => {
+        // Add skeleton while loading
+        if (!img.complete) {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+            
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+            }, { once: true });
+        }
+    });
+});
+
+// ============================================
+// ACCESSIBILITY: ANNOUNCE DYNAMIC CONTENT
+// ============================================
+function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+}
+
+// Announce step changes in wizard
+document.querySelectorAll('.next-step, .prev-step').forEach(btn => {
+    btn.addEventListener('click', () => {
+        setTimeout(() => {
+            const activeStep = document.querySelector('.wizard-step.active');
+            if (activeStep) {
+                const stepNum = activeStep.dataset.step;
+                announceToScreenReader(`Now on step ${stepNum} of 3`);
+            }
+        }, 100);
+    });
+});

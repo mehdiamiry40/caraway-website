@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `caraway-${CACHE_VERSION}`;
 const OFFLINE_URL = './offline.html';
 
@@ -10,6 +10,7 @@ const PRECACHE_ASSETS = [
   './logo.svg',
   './manifest.json',
   './offline.html',
+  './faq.html',
   './blog/ultimate-guide-cash-for-cars-brisbane.html',
   './blog/5-reasons-local-cash-for-cars-brisbane.html',
   './blog/cash-for-cars-vs-private-sale.html',

@@ -501,7 +501,7 @@
                 <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
                 <li role="none"><a href="#why-choose-us" role="menuitem">Why Choose Us</a></li>
                 <li role="none"><a href="#get-quote" role="menuitem">Get Quote</a></li>
-                <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+                <li role="none"><a href="faq.html" role="menuitem">FAQ</a></li>
                 <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -532,6 +532,26 @@
             </div>
         </nav>
     </header>
+
+    <!-- Recent Sales Ticker -->
+    <div class="sales-ticker" aria-label="Recent car sales">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span class="ticker-item">🚗 Toyota Camry sold in Chermside — <strong>$8,500</strong></span>
+                <span class="ticker-item">🚙 Mazda CX-5 sold in Sunnybank — <strong>$12,200</strong></span>
+                <span class="ticker-item">🚐 Ford Ranger sold in Logan — <strong>$14,800</strong></span>
+                <span class="ticker-item">🚗 Honda Civic sold in Toowong — <strong>$6,300</strong></span>
+                <span class="ticker-item">🚙 Nissan X-Trail sold in Ipswich — <strong>$9,100</strong></span>
+                <span class="ticker-item">🚗 Holden Commodore sold in Redcliffe — <strong>$4,500</strong></span>
+                <span class="ticker-item">🚗 Toyota Camry sold in Chermside — <strong>$8,500</strong></span>
+                <span class="ticker-item">🚙 Mazda CX-5 sold in Sunnybank — <strong>$12,200</strong></span>
+                <span class="ticker-item">🚐 Ford Ranger sold in Logan — <strong>$14,800</strong></span>
+                <span class="ticker-item">🚗 Honda Civic sold in Toowong — <strong>$6,300</strong></span>
+                <span class="ticker-item">🚙 Nissan X-Trail sold in Ipswich — <strong>$9,100</strong></span>
+                <span class="ticker-item">🚗 Holden Commodore sold in Redcliffe — <strong>$4,500</strong></span>
+            </div>
+        </div>
+    </div>
 
     <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
@@ -876,6 +896,37 @@
                             <p>We guarantee to beat any genuine cash for cars quote by $100 or we'll
                                 pay you $50 just for your time!</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compare Your Quote Widget -->
+        <section class="compare-section">
+            <div class="container">
+                <div class="compare-widget">
+                    <h3>🏆 We'll Beat Any Quote by $100</h3>
+                    <p>Got a quote from another buyer? Enter it below and see how much more you'll get with Caraway!</p>
+                    <div class="compare-form">
+                        <div class="form-group">
+                            <label for="competitor-quote">Their Quote ($)</label>
+                            <input type="number" id="competitor-quote" placeholder="e.g., 5000" min="0" max="50000">
+                        </div>
+                        <button type="button" class="btn btn-accent" id="compare-btn">Compare Now</button>
+                    </div>
+                    <div class="compare-result" id="compare-result">
+                        <div class="compare-columns">
+                            <div class="compare-column competitor">
+                                <h4>Their Offer</h4>
+                                <div class="price" id="competitor-price">$0</div>
+                            </div>
+                            <div class="compare-column caraway">
+                                <h4>Caraway Offer</h4>
+                                <div class="price" id="caraway-price">$0</div>
+                            </div>
+                        </div>
+                        <div class="compare-savings" id="compare-savings">You save $100 with Caraway!</div>
+                        <p class="compare-guarantee">✓ Best Price Guarantee: If we can't beat it, we'll pay you $50 for your time!</p>
                     </div>
                 </div>
             </div>
