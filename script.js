@@ -115,6 +115,31 @@ document.querySelectorAll('.stat-number[data-count]').forEach(el => {
 });
 
 // ============================================
+// HERO VISUAL INTERACTION
+// ============================================
+const heroVisual = document.querySelector('.hero-visual');
+let heroScrollFrame;
+
+function updateHeroVisualTransform() {
+    if (!heroVisual) return;
+    const rect = heroVisual.getBoundingClientRect();
+    const viewportCenter = window.innerHeight / 2;
+    const elementCenter = rect.top + rect.height / 2;
+    const offset = Math.max(-40, Math.min(40, (viewportCenter - elementCenter) * 0.08));
+    heroVisual.style.transform = `translateY(${offset}px)`;
+}
+
+function handleHeroVisualScroll() {
+    if (!heroVisual) return;
+    if (heroScrollFrame) cancelAnimationFrame(heroScrollFrame);
+    heroScrollFrame = requestAnimationFrame(updateHeroVisualTransform);
+}
+
+handleHeroVisualScroll();
+window.addEventListener('scroll', handleHeroVisualScroll, { passive: true });
+window.addEventListener('resize', handleHeroVisualScroll);
+
+// ============================================
 // HEADER SCROLL EFFECT
 // ============================================
 const header = document.querySelector('.header');
@@ -808,18 +833,84 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!wizardForm) return;
 
     const steps = wizardForm.querySelectorAll('.wizard-step');
+    if (!steps.length) return;
+
     const nextBtns = wizardForm.querySelectorAll('.next-step');
     const prevBtns = wizardForm.querySelectorAll('.prev-step');
     const progressBar = wizardForm.querySelector('.progress-bar');
     const stepsIndicator = wizardForm.querySelector('.steps-indicator');
-    
-    if (!steps.length) return;
+    const wizardInputs = wizardForm.querySelectorAll('input, select, textarea');
+
+    const summaryEls = {
+        vehicle: document.getElementById('summary-vehicle'),
+        condition: document.getElementById('summary-condition'),
+        contact: document.getElementById('summary-contact'),
+        location: document.getElementById('summary-location')
+    };
+
+    const storageKey = 'carawayQuoteWizard';
+
+    function updateSummary() {
+        if (!summaryEls.vehicle || typeof FormData === 'undefined') return;
+        const formData = new FormData(wizardForm);
+        const make = formData.get('make')?.trim();
+        const model = formData.get('model')?.trim();
+        const year = formData.get('year')?.trim();
+        const condition = formData.get('condition')?.trim();
+        const name = formData.get('name')?.trim();
+        const phone = formData.get('phone')?.trim();
+        const suburb = formData.get('suburb')?.trim();
+
+        const vehicleParts = [year, make, model].filter(Boolean);
+        summaryEls.vehicle.textContent = vehicleParts.length ? vehicleParts.join(' ') : '—';
+        summaryEls.condition.textContent = condition ? condition.replace(/-/g, ' ') : '—';
+        summaryEls.contact.textContent = name || phone ? [name, phone].filter(Boolean).join(' • ') : '—';
+        summaryEls.location.textContent = suburb || '—';
+    }
+
+    function persistWizardData() {
+        if (!window.sessionStorage) return;
+        try {
+            const data = {};
+            wizardInputs.forEach(input => {
+                if (input.name) {
+                    data[input.name] = input.value;
+                }
+            });
+            sessionStorage.setItem(storageKey, JSON.stringify(data));
+        } catch (error) {
+            console.warn('Wizard storage unavailable', error);
+        }
+    }
+
+    function restoreWizardData() {
+        if (!window.sessionStorage) return;
+        try {
+            const saved = sessionStorage.getItem(storageKey);
+            if (!saved) return;
+            const data = JSON.parse(saved);
+            Object.entries(data).forEach(([name, value]) => {
+                const field = wizardForm.elements.namedItem(name);
+                if (field && !field.value) {
+                    field.value = value;
+                }
+            });
+        } catch (error) {
+            console.warn('Wizard storage restore failed', error);
+        }
+    }
+
+    wizardInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            updateSummary();
+            persistWizardData();
+        });
+    });
 
     let currentStep = 1;
     const totalSteps = steps.length;
 
-    function updateWizard(step) {
-        // Update steps visibility
+    function updateWizard(step, shouldScroll = true) {
         steps.forEach(s => {
             if (parseInt(s.dataset.step) === step) {
                 s.classList.add('active');
@@ -828,16 +919,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Update progress bar
         const progress = (step / totalSteps) * 100;
         if (progressBar) progressBar.style.width = `${progress}%`;
-        
-        // Update indicator
         if (stepsIndicator) stepsIndicator.textContent = `Step ${step} of ${totalSteps}`;
-        
-        // Scroll to top of form
-        const formTop = wizardForm.getBoundingClientRect().top + window.pageYOffset - 100;
-        window.scrollTo({ top: formTop, behavior: 'smooth' });
+        updateSummary();
+
+        if (shouldScroll) {
+            const formTop = wizardForm.getBoundingClientRect().top + window.pageYOffset - 100;
+            window.scrollTo({ top: formTop, behavior: 'smooth' });
+        }
     }
 
     function validateStep(step) {
@@ -849,7 +939,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!input.value.trim()) {
                 isValid = false;
                 input.classList.add('error');
-                // Trigger browser validation UI if possible, or custom
                 input.reportValidity();
             } else {
                 input.classList.remove('error');
@@ -861,11 +950,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     nextBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            if (validateStep(currentStep)) {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    updateWizard(currentStep);
-                }
+            if (validateStep(currentStep) && currentStep < totalSteps) {
+                currentStep++;
+                updateWizard(currentStep);
             }
         });
     });
@@ -878,7 +965,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Initial update
-    updateWizard(1);
+
+    restoreWizardData();
+    updateSummary();
+    updateWizard(1, false);
+
+    wizardForm.addEventListener('submit', () => {
+        try {
+            sessionStorage.removeItem(storageKey);
+        } catch (error) {
+            console.warn('Wizard storage clear failed', error);
+        }
+    });
 });
