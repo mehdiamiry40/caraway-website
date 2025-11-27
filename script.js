@@ -4,22 +4,19 @@
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-// Check for saved theme preference or default to system preference
+// Check for saved theme preference or default to dark (new design default)
 function getPreferredTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         return savedTheme;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Default to dark theme for the new design
+    return 'dark';
 }
 
 // Apply theme
 function applyTheme(theme) {
-    if (theme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-    } else {
-        html.removeAttribute('data-theme');
-    }
+    html.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 }
 
@@ -29,7 +26,7 @@ applyTheme(getPreferredTheme());
 // Toggle theme on button click
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         applyTheme(newTheme);
         
