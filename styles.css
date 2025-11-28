@@ -1348,6 +1348,361 @@ strong {
 }
 
 /* ============================================
+   WHAT WE BUY SECTION
+   ============================================ */
+.what-we-buy {
+    background: var(--gray-50);
+}
+
+.vehicle-types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.vehicle-type {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.vehicle-type:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.vehicle-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.vehicle-type h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+    color: var(--gray-900);
+}
+
+.vehicle-type p {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.brands-section {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.brands-section h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+    color: var(--gray-900);
+}
+
+.brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+.brand {
+    background: var(--gray-100);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--gray-700);
+    transition: all 0.2s ease;
+}
+
+.brand:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+    background: var(--white);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.testimonial-card {
+    background: var(--gray-50);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--gray-200);
+}
+
+.testimonial-stars {
+    color: #f59e0b;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+}
+
+.testimonial-card blockquote p {
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--text-sm);
+}
+
+.testimonial-author strong {
+    display: block;
+    color: var(--gray-900);
+}
+
+.testimonial-author span {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-8);
+    background: var(--primary-50);
+    border-radius: var(--radius-xl);
+}
+
+.trust-badge {
+    text-align: center;
+}
+
+.trust-number {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.trust-label {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+    background: var(--gray-50);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-6);
+    color: var(--gray-900);
+}
+
+.about-content p {
+    color: var(--gray-600);
+    margin-bottom: var(--space-4);
+    line-height: 1.8;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.about-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.about-feature svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+.stat-card {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.stat-card .stat-value {
+    display: block;
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: var(--space-1);
+}
+
+.stat-card .stat-label {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+/* ============================================
+   BLOG PREVIEW SECTION
+   ============================================ */
+.blog-preview {
+    background: var(--white);
+}
+
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.blog-preview-card {
+    background: var(--gray-50);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+}
+
+.blog-preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.blog-preview-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.blog-preview-card h3 {
+    font-size: var(--text-lg);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.blog-preview-card p {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+.read-more {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.blog-cta {
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE - NEW SECTIONS
+   ============================================ */
+@media (max-width: 1024px) {
+    .vehicle-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-types-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trust-badges {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+    }
+    
+    .trust-badge {
+        flex: 1 1 40%;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
    MOBILE STICKY CTA
    ============================================ */
 .mobile-cta {
