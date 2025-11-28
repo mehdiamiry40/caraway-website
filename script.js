@@ -275,6 +275,28 @@ const observerOptions = {
     }
     
     // ============================================
+    // BACK TO TOP BUTTON
+    // ============================================
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // ============================================
     // CONSOLE BRANDING
     // ============================================
     console.log('%c🚗 Caraway - Cash for Cars Brisbane', 'font-size: 20px; font-weight: bold; color: #059669;');
