@@ -1,31 +1,16 @@
-# robots.txt for Caraway - Cash for Cars Brisbane
-# https://www.caraway.com.au/robots.txt
+# Robots.txt for Caraway - Cash for Cars Brisbane
+# https://www.caraway.com.au
 
 User-agent: *
 Allow: /
 
-# Allow all major search engine bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Block common bad bots
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-# Sitemap location
+# Sitemaps
 Sitemap: https://www.caraway.com.au/sitemap.xml
 
-# Host
-Host: https://www.caraway.com.au
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
+
+# Disallow admin or private areas (none currently)
+# Disallow: /admin/
+# Disallow: /private/
+
