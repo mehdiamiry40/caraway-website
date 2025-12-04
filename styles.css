@@ -13,11 +13,11 @@
 /* CSS Variables */
 :root {
     /* Brand Colors */
-    --primary: #059669;
-    --primary-dark: #047857;
-    --primary-light: #10b981;
-    --primary-50: #ecfdf5;
-    --primary-100: #d1fae5;
+    --primary: #0ea5e9;
+    --primary-dark: #0369a1;
+    --primary-light: #38bdf8;
+    --primary-50: #ecfeff;
+    --primary-100: #cffafe;
     
     /* Neutral Colors */
     --white: #ffffff;
@@ -97,7 +97,7 @@ body {
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--gray-700);
-    background: var(--white);
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 60%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -185,14 +185,14 @@ strong {
 .btn-primary {
     background: var(--primary);
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+    box-shadow: 0 10px 28px rgba(3, 105, 161, 0.45);
 }
 
 .btn-secondary {
@@ -386,7 +386,7 @@ strong {
    ============================================ */
 .hero {
     padding: calc(80px + var(--space-16)) 0 var(--space-16);
-    background: linear-gradient(180deg, var(--primary-50) 0%, var(--white) 100%);
+    background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.12), transparent 35%), linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
 }
 
 .hero .container {
@@ -489,11 +489,11 @@ strong {
 }
 
 .hero-card {
-    background: var(--white);
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 18px 40px rgba(14, 165, 233, 0.12);
     padding: var(--space-8);
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(14, 165, 233, 0.15);
 }
 
 .card-header {
@@ -689,7 +689,7 @@ strong {
    HOW IT WORKS
    ============================================ */
 .how-it-works {
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .steps-grid {
@@ -771,8 +771,8 @@ strong {
 
 .service-card {
     padding: var(--space-8);
-    background: var(--white);
-    border: 1px solid var(--gray-200);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid rgba(14, 165, 233, 0.12);
     border-radius: var(--radius-xl);
     transition: all var(--transition);
 }
@@ -834,7 +834,7 @@ strong {
    WHY CHOOSE US
    ============================================ */
 .why-us {
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .why-grid {
@@ -962,9 +962,10 @@ strong {
 }
 
 .area-region {
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
     padding: var(--space-6);
     border-radius: var(--radius-xl);
+    border: 1px solid rgba(14, 165, 233, 0.12);
 }
 
 .area-region h3 {
@@ -1007,7 +1008,7 @@ strong {
    FAQ
    ============================================ */
 .faq {
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .faq-grid {
@@ -1091,7 +1092,7 @@ strong {
    QUOTE SECTION
    ============================================ */
 .quote-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
     color: var(--white);
 }
 
@@ -1180,9 +1181,10 @@ strong {
 .contact-card {
     text-align: center;
     padding: var(--space-8);
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
     border-radius: var(--radius-xl);
     transition: all var(--transition);
+    border: 1px solid rgba(14, 165, 233, 0.12);
 }
 
 .contact-card:hover {
@@ -1236,7 +1238,7 @@ strong {
    FOOTER
    ============================================ */
 .footer {
-    background: var(--gray-900);
+    background: linear-gradient(180deg, #0b1727 0%, #0b0f1a 100%);
     color: var(--gray-400);
     padding: var(--space-16) 0 var(--space-8);
 }
@@ -1351,7 +1353,7 @@ strong {
    WHAT WE BUY SECTION
    ============================================ */
 .what-we-buy {
-    background: var(--gray-50);
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .vehicle-types-grid {
@@ -1362,11 +1364,12 @@ strong {
 }
 
 .vehicle-type {
-    background: var(--white);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
     padding: var(--space-8);
     border-radius: var(--radius-xl);
     text-align: center;
     box-shadow: var(--shadow);
+    border: 1px solid rgba(14, 165, 233, 0.12);
     transition: all 0.3s ease;
 }
 
